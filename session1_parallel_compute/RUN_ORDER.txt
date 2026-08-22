@@ -1,0 +1,43 @@
+MIT 261 SESSION 1 - INDIAN E-COMMERCE SALES ANALYTICS
+======================================================
+
+Put these exact dataset files in:
+    session1_parallel_compute/datasets/
+
+Required files:
+    customers.csv
+    products.csv
+    sales.csv
+
+Run in this order:
+
+1. python profile_files.py
+2. python load_and_join.py
+3. python partition_strategy.py
+4. python sequential_baseline.py
+5. python parallel_compute.py
+6. python benchmark.py
+7. python partition_analysis.py
+8. python render_diagrams.py
+
+Core design:
+    Event file      : sales.csv (250,000 rows)
+    Entity file     : customers.csv (40,000 rows)
+    Entity file     : products.csv (2,000 rows)
+
+Relationships:
+    Customer 1 -> many Sales via Customer_ID
+    Product  1 -> many Sales via Product_ID
+
+Partition key:
+    Customer_ID
+
+Event time:
+    Order_Date
+
+Metric:
+    Total_Amount
+
+Workload:
+    Per-customer transaction count, total revenue, mean revenue,
+    total quantity, and average rating.

@@ -1,0 +1,38 @@
+{
+  "chosen_partition_key": "Customer_ID",
+  "entity_owner": "Customer entity (customers.csv)",
+  "relationship": "Customer 1 -> many Sales",
+  "workload": "Compute transaction count, total revenue, mean revenue, total quantity, and average rating per Customer_ID.",
+  "candidates": {
+    "Customer_ID": {
+      "key": "Customer_ID",
+      "distinct": 39914,
+      "min": 1,
+      "median": 6.0,
+      "max": 19,
+      "mean": 6.263466452873678,
+      "skew_ratio_max_min": 19.0,
+      "largest_key": "CUST00005290"
+    },
+    "Product_ID": {
+      "key": "Product_ID",
+      "distinct": 2000,
+      "min": 38,
+      "median": 113.0,
+      "max": 267,
+      "mean": 125.0,
+      "skew_ratio_max_min": 7.026315789473684,
+      "largest_key": "PROD000004"
+    },
+    "State": {
+      "key": "State",
+      "distinct": 10,
+      "min": 18989,
+      "median": 25203.0,
+      "max": 32631,
+      "mean": 25000.0,
+      "skew_ratio_max_min": 1.718415925009216,
+      "largest_key": "UP"
+    }
+  }
+}

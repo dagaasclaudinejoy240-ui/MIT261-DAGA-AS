@@ -1,0 +1,49 @@
+
+digraph EntityModel {
+  rankdir=LR;
+  bgcolor="white";
+  splines=polyline;
+  fontname="Helvetica";
+  labelloc="t";
+  fontsize=17;
+  label=<<b>Indian E-Commerce Sales — Session 1 Entity Model</b><br/>
+  <font point-size="11">two genuine 1:M relationships · metric = Total_Amount</font><br/>>;
+
+  node [shape=plaintext fontname="Helvetica"];
+  edge [color="#2E74B5" fontname="Helvetica" fontsize=10 penwidth=1.6];
+
+  Customer [label=<
+    <table border="0" cellborder="1" cellspacing="0" cellpadding="5">
+      <tr><td bgcolor="#D9EAF7"><b>Customer</b><br/><font point-size="9">Entity · customers.csv</font></td></tr>
+      <tr><td align="left"><b>Customer_ID : String «PK» «partitionKey»</b></td></tr>
+      <tr><td align="left">Customer_Name : String</td></tr>
+      <tr><td align="left">State : String</td></tr>
+      <tr><td align="left">Customer_Tier : String</td></tr>
+    </table>>];
+
+  Sale [label=<
+    <table border="0" cellborder="1" cellspacing="0" cellpadding="5">
+      <tr><td bgcolor="#D9EAF7"><b>Sale</b><br/><font point-size="9">Event · sales.csv</font></td></tr>
+      <tr><td align="left"><b>Order_ID : String «PK»</b></td></tr>
+      <tr><td align="left">Customer_ID : String «FK»</td></tr>
+      <tr><td align="left">Product_ID : String «FK»</td></tr>
+      <tr><td align="left">Order_Date : Date <b>«eventTime»</b></td></tr>
+      <tr><td align="left">Quantity : Integer</td></tr>
+      <tr><td align="left" bgcolor="#FFF2CC"><b>Total_Amount : Double «metricField»</b></td></tr>
+      <tr><td align="left">Order_Status : String</td></tr>
+      <tr><td align="left">Payment_Mode : String</td></tr>
+    </table>>];
+
+  Product [label=<
+    <table border="0" cellborder="1" cellspacing="0" cellpadding="5">
+      <tr><td bgcolor="#D9EAF7"><b>Product</b><br/><font point-size="9">Entity · products.csv</font></td></tr>
+      <tr><td align="left"><b>Product_ID : String «PK»</b></td></tr>
+      <tr><td align="left">Product_Name : String</td></tr>
+      <tr><td align="left">Category : String</td></tr>
+      <tr><td align="left">Brand : String</td></tr>
+      <tr><td align="left">Selling_Price : Double</td></tr>
+    </table>>];
+
+  Customer -> Sale [dir=both arrowtail=none arrowhead=none xlabel="1          0..*\nCustomer_ID"];
+  Product -> Sale [dir=both arrowtail=none arrowhead=none xlabel="1          0..*\nProduct_ID"];
+}

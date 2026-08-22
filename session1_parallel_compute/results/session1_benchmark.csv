@@ -1,0 +1,5 @@
+run,parallelism_partitions,execution_time_s,rows_groups,correct,speedup_vs_baseline,observation
+Sequential baseline,1 / non-parallel,0.078566,39914,Yes,1.0000,pandas reference
+Parallel 2,2,0.295847,39914,Yes,0.2656,
+Parallel 4,4,0.272280,39914,Yes,0.2885,
+Parallel 8,8,0.251201,39914,Yes,0.3128,fastest Spark setting

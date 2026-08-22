@@ -1,0 +1,5 @@
+partition,predicted_even_count,actual_count,ratio_to_even
+0,62500.0,62491,0.9999
+1,62500.0,62627,1.002
+2,62500.0,62225,0.9956
+3,62500.0,62657,1.0025

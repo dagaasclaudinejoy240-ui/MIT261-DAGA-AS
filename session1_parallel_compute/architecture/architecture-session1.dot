@@ -1,0 +1,39 @@
+
+digraph Architecture {
+  rankdir=LR;
+  bgcolor="white";
+  splines=ortho;
+  fontname="Helvetica";
+  labelloc="t";
+  fontsize=17;
+  label=<<b>Indian E-Commerce Sales — Session 1 In-Memory Parallel Compute</b><br/>
+  <font point-size="11">PySpark local mode · bounded parallelism = 4</font><br/>>;
+
+  node [shape=box style="rounded,filled" fontname="Helvetica" fontsize=10];
+  edge [color="#2E74B5"];
+
+  sales [label="sales.csv\nEvent · 250,000 rows" fillcolor="#D9EAF7"];
+  customers [label="customers.csv\nEntity · 40,000 rows" fillcolor="#D9EAF7"];
+  products [label="products.csv\nEntity · 2,000 rows" fillcolor="#D9EAF7"];
+
+  profile [label="profile_files.py\nprofiling + FK checks" fillcolor="#FFF2CC"];
+  join [label="load_and_join.py\nvalidated 1:M joins" fillcolor="#FFF2CC"];
+  repart [label="repartition(4, 'Customer_ID')" fillcolor="#E2EFDA"];
+  agg [label="parallel_compute.py\ncount · revenue · quantity · rating" fillcolor="#E2EFDA"];
+  base [label="sequential_baseline.py\npandas reference" fillcolor="#FCE4D6"];
+  valid [label="correctness validation\ncounts exact · floats within tolerance" fillcolor="#FCE4D6"];
+  output [label="customer_revenue.parquet" fillcolor="#D9EAF7" color="#1F3864"];
+  bench [label="session1_benchmark.csv" fillcolor="#D9EAF7" color="#1F3864"];
+
+  sales -> profile;
+  customers -> profile;
+  products -> profile;
+  profile -> join;
+  join -> repart;
+  repart -> agg;
+  join -> base;
+  agg -> valid;
+  base -> valid;
+  valid -> output;
+  agg -> bench;
+}

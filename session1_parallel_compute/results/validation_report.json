@@ -1,0 +1,23 @@
+{
+  "join": {
+    "rows_before": 250000,
+    "rows_after": 250000,
+    "join_seconds": 3.080204900004901,
+    "broadcast_hash_join_occurrences": 4,
+    "sort_merge_join_occurrences": 0
+  },
+  "configured_partitions": 4,
+  "actual_partitions": 4,
+  "parallel_seconds": 0.6584555999725126,
+  "validation": {
+    "parallel_groups": 39914,
+    "baseline_groups": 39914,
+    "max_txn_count_diff": 0.0,
+    "max_revenue_total_diff": 2.3283064365386963e-10,
+    "max_revenue_mean_diff": 2.9103830456733704e-11,
+    "max_quantity_total_diff": 0.0,
+    "max_rating_mean_diff": 0.0,
+    "allowed_revenue_total_tolerance": 1.07144402e-06,
+    "result": "PASS"
+  }
+}
