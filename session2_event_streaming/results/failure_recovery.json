@@ -1,0 +1,19 @@
+{
+  "crashed": true,
+  "fail_after": 25000,
+  "handled_before_crash": 25000,
+  "committed_offsets": {
+    "0": 22500,
+    "1": 0,
+    "2": 0,
+    "3": 0
+  },
+  "backlog_before_recovery": 227500,
+  "recovered_events": 227500,
+  "recovery_seconds": 368.32832630000485,
+  "final_lag": 0,
+  "audit_entries_written": 252500,
+  "events_in_log": 250000,
+  "redelivered": 2500,
+  "producer_unaffected": true
+}

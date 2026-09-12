@@ -1,0 +1,17 @@
+{
+  "events": 250000,
+  "seconds": 4.135171300000138,
+  "events_per_second": 60456.98759806919,
+  "log_size_bytes": 211285018,
+  "partition_counts": [
+    62575,
+    62420,
+    62655,
+    62350
+  ],
+  "skew_ratio": 1.0048917401764235,
+  "topic": "sale.recorded",
+  "partition_key": "Customer_ID",
+  "mechanism_field": "Payment_Method",
+  "event_time_field": "Order_Date"
+}

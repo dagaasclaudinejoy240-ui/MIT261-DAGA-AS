@@ -1,0 +1,8 @@
+{
+  "Stable key routing": "PASS",
+  "Ordering within a partition": "PASS",
+  "Non-destructive read": "PASS",
+  "Consumer group isolation": "PASS",
+  "Replay": "PASS",
+  "Durability": "PASS"
+}

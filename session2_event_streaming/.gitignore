@@ -1,0 +1,7 @@
+event_log/
+results/audit_log.jsonl
+results/audit_failure_demo.jsonl
+.venv/
+__pycache__/
+*.pyc
+.env

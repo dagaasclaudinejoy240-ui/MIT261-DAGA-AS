@@ -1,0 +1,12 @@
+{
+  "new_consumer_events": 250000,
+  "new_consumer_seconds": 2.1727979999996023,
+  "rewind_deterministic": true,
+  "replay_groups": 39914,
+  "offline_catchup_events": 250000,
+  "partial_from": "2026-01-29T00:00:00",
+  "partial_events": 50160,
+  "total_events": 250000,
+  "analytics_dimension": "Payment_Method",
+  "analytics_rows": 4
+}

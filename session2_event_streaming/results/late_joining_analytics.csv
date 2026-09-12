@@ -1,0 +1,5 @@
+dimension,value,events,revenue
+Payment_Method,UPI,128474,3176416926.9602294
+Payment_Method,COD,82093,1841908755.1999414
+Payment_Method,Debit Card,28856,631707584.4599895
+Payment_Method,Credit Card,10577,280659987.6799994
