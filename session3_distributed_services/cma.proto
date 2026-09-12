@@ -1,0 +1,27 @@
+syntax = "proto3";
+package ecominsight;
+message Empty {}
+message CustomerRequest { string customer_id = 1; }
+message CustomerBatchRequest { repeated string customer_ids = 1; }
+message Customer { string customer_id = 1; string customer_name = 2; string city = 3; string state = 4; string customer_tier = 5; }
+message CustomerBatch { repeated Customer customers = 1; }
+message ConfigRequest { string key = 1; }
+message MonetizationConfig { string currency = 1; double high_value_threshold = 2; int64 version = 3; }
+message EntitlementRequest { string customer_id = 1; }
+message Entitlement { string customer_id = 1; string tier = 2; bool active = 3; }
+message TransactionQuery { int64 limit = 1; string customer_id = 2; }
+message Transaction { string order_id = 1; string customer_id = 2; string product_id = 3; string order_date = 4; int64 quantity = 5; double total_amount = 6; double rating = 7; string payment_mode = 8; }
+message TransactionList { repeated Transaction transactions = 1; }
+message Count { int64 value = 1; }
+message RevenueQuery { string customer_id = 1; }
+message CustomerRevenue { string customer_id = 1; int64 txn_count = 2; double revenue_total = 3; double revenue_mean = 4; int64 quantity_total = 5; double rating_mean = 6; }
+message CustomerRevenueReport { repeated CustomerRevenue rows = 1; int64 total_records = 2; double aggregate_total = 3; }
+message ChargeRequest { int64 amount_cents = 1; string customer_id = 2; string currency = 3; string idempotency_key = 4; int64 delay_ms = 5; }
+message ChargeResult { string charge_id = 1; string status = 2; int64 amount_cents = 3; string provider = 4; }
+message ErrorStatus { string code = 1; string message = 2; }
+service CustomerService { rpc GetCustomer(CustomerRequest) returns (Customer); rpc BatchGetCustomers(CustomerBatchRequest) returns (CustomerBatch); }
+service ConfigService { rpc GetConfig(ConfigRequest) returns (MonetizationConfig); }
+service EntitlementService { rpc GetEntitlement(EntitlementRequest) returns (Entitlement); }
+service TransactionService { rpc CountTransactions(Empty) returns (Count); rpc ListTransactions(TransactionQuery) returns (TransactionList); rpc StreamTransactions(TransactionQuery) returns (stream Transaction); }
+service RevenueService { rpc ComputeCustomerRevenue(RevenueQuery) returns (CustomerRevenueReport); rpc StreamCustomerRevenue(RevenueQuery) returns (stream CustomerRevenue); }
+service ChargeService { rpc Charge(ChargeRequest) returns (ChargeResult); }

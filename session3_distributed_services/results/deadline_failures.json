@@ -1,0 +1,6 @@
+{
+  "short_deadline": "DEADLINE_EXCEEDED",
+  "generous_deadline": "approved",
+  "not_found_json": "NOT_FOUND",
+  "not_found_proto": "NOT_FOUND"
+}

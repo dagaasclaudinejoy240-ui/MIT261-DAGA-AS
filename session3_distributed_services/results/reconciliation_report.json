@@ -1,0 +1,48 @@
+{
+  "tolerance": 1e-06,
+  "sources": {
+    "session1": "C:\\Users\\JAMESROY\\OneDrive\\Desktop\\NDMU MASTERAL\\MIT261-DAGA-AS\\session1_parallel_compute\\results\\baseline_result.csv",
+    "session2": "C:\\Users\\JAMESROY\\OneDrive\\Desktop\\NDMU MASTERAL\\MIT261-DAGA-AS\\session2_event_streaming\\results\\streamed_customer_revenue.csv",
+    "session3": "C:\\Users\\JAMESROY\\OneDrive\\Desktop\\NDMU MASTERAL\\MIT261-DAGA-AS\\session3_distributed_services\\results\\session3_customer_revenue.csv"
+  },
+  "session1": {
+    "groups": 39914,
+    "records": 250000,
+    "revenue": 5930693254.300001
+  },
+  "session2": {
+    "groups": 39914,
+    "records": 250000,
+    "revenue": 5930693254.300001
+  },
+  "session3": {
+    "groups": 39914,
+    "records": 250000,
+    "revenue": 5930693254.300001
+  },
+  "session1_vs_session2": {
+    "group_sets_identical": true,
+    "max_txn_count_diff": 0,
+    "max_revenue_total_diff": 2.3283064365386963e-10,
+    "max_revenue_mean_diff": 2.9103830456733704e-11,
+    "max_quantity_total_diff": 0,
+    "max_rating_mean_diff": 5.0
+  },
+  "session1_vs_session3": {
+    "group_sets_identical": true,
+    "max_txn_count_diff": 0,
+    "max_revenue_total_diff": 2.3283064365386963e-10,
+    "max_revenue_mean_diff": 2.9103830456733704e-11,
+    "max_quantity_total_diff": 0,
+    "max_rating_mean_diff": 0.0
+  },
+  "session2_vs_session3": {
+    "group_sets_identical": true,
+    "max_txn_count_diff": 0,
+    "max_revenue_total_diff": 2.3283064365386963e-10,
+    "max_revenue_mean_diff": 2.9103830456733704e-11,
+    "max_quantity_total_diff": 0,
+    "max_rating_mean_diff": 5.0
+  },
+  "result": "PASS"
+}

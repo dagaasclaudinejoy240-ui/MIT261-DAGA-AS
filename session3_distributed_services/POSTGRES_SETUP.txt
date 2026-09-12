@@ -1,0 +1,31 @@
+SESSION 3 POSTGRESQL SETUP
+==========================
+1. Keep this folder beside:
+   session1_parallel_compute\
+   session2_event_streaming\
+
+2. Install Session 3 dependencies:
+   python -m pip install -r requirements.txt
+
+3. Double-click SETUP_ENV.bat (or copy .env.example to .env).
+   Put your PostgreSQL password in PGPASSWORD.
+   Do NOT submit the .env file.
+
+4. Test PostgreSQL:
+   python database.py
+
+   Expected:
+   database = indian_ecommerce
+   customers = 40,000
+   products = 2,000
+   sales = 250,000
+
+5. Verify earlier-session artifacts exist:
+   ..\session1_parallel_compute\results\baseline_result.csv
+   ..\session2_event_streaming\results\streamed_customer_revenue.csv
+
+6. Run:
+   python run_pipeline.py
+   python session3_dashboard.py
+
+Session 3 uses PostgreSQL for live service data and the actual Session 1 and Session 2 output files for reconciliation.

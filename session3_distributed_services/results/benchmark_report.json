@@ -1,0 +1,143 @@
+{
+  "contract": {
+    "messages_checked": 19,
+    "services_checked": 6,
+    "methods_checked": 10,
+    "result": "PASS",
+    "errors": []
+  },
+  "payload": [
+    {
+      "message": "ChargeRequest",
+      "fields": 5,
+      "json_bytes": 110,
+      "protobuf_bytes": 32,
+      "saved_bytes": 78,
+      "reduction_pct": 70.91
+    },
+    {
+      "message": "ChargeResult",
+      "fields": 4,
+      "json_bytes": 101,
+      "protobuf_bytes": 47,
+      "saved_bytes": 54,
+      "reduction_pct": 53.47
+    },
+    {
+      "message": "Customer",
+      "fields": 5,
+      "json_bytes": 119,
+      "protobuf_bytes": 52,
+      "saved_bytes": 67,
+      "reduction_pct": 56.3
+    },
+    {
+      "message": "MonetizationConfig",
+      "fields": 3,
+      "json_bytes": 60,
+      "protobuf_bytes": 16,
+      "saved_bytes": 44,
+      "reduction_pct": 73.33
+    },
+    {
+      "message": "Entitlement",
+      "fields": 3,
+      "json_bytes": 58,
+      "protobuf_bytes": 22,
+      "saved_bytes": 36,
+      "reduction_pct": 62.07
+    },
+    {
+      "message": "Transaction",
+      "fields": 8,
+      "json_bytes": 179,
+      "protobuf_bytes": 69,
+      "saved_bytes": 110,
+      "reduction_pct": 61.45
+    },
+    {
+      "message": "CustomerRevenue",
+      "fields": 6,
+      "json_bytes": 139,
+      "protobuf_bytes": 45,
+      "saved_bytes": 94,
+      "reduction_pct": 67.63
+    },
+    {
+      "message": "CustomerBatch",
+      "fields": 1,
+      "json_bytes": 12293,
+      "protobuf_bytes": 5678,
+      "saved_bytes": 6615,
+      "reduction_pct": 53.81
+    }
+  ],
+  "latency": [
+    {
+      "transport": "in-process",
+      "codec": "json",
+      "timed_calls": 120,
+      "median_ms": 0.003,
+      "calls_per_sec": 333333.3333333333,
+      "bytes_call": 30
+    },
+    {
+      "transport": "http/json",
+      "codec": "json",
+      "timed_calls": 120,
+      "median_ms": 1.2096,
+      "calls_per_sec": 826.7195767195767,
+      "bytes_call": 30
+    },
+    {
+      "transport": "http/proto",
+      "codec": "proto",
+      "timed_calls": 120,
+      "median_ms": 0.73035,
+      "calls_per_sec": 1369.206544807284,
+      "bytes_call": 14
+    },
+    {
+      "transport": "grpc/proto",
+      "codec": "proto",
+      "timed_calls": 120,
+      "median_ms": 0.5542499999999999,
+      "calls_per_sec": 1804.239963915201,
+      "bytes_call": 14
+    }
+  ],
+  "roundtrips": [
+    {
+      "transport": "http/json",
+      "codec": "json",
+      "rows": 50,
+      "batched_calls": 1,
+      "batched_ms": 1.622,
+      "single_calls": 50,
+      "single_ms": 52.3052,
+      "speedup": 32.24734895191122,
+      "trips_saved": 49,
+      "identical": true
+    },
+    {
+      "transport": "http/proto",
+      "codec": "proto",
+      "rows": 50,
+      "batched_calls": 1,
+      "batched_ms": 3.96,
+      "single_calls": 50,
+      "single_ms": 59.0458,
+      "speedup": 14.910555555555556,
+      "trips_saved": 49,
+      "identical": true
+    }
+  ],
+  "streaming": {
+    "codec": "proto",
+    "rows": 1000,
+    "unary_total_ms": 61.3746,
+    "stream_total_ms": 158.2368,
+    "first_message_ms": 56.0581,
+    "earlier_by_ms": 5.316499999999998
+  }
+}

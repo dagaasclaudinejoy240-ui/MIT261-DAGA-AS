@@ -1,0 +1,25 @@
+digraph G {
+  rankdir=LR; graph [bgcolor="white", pad=0.3, nodesep=0.45, ranksep=0.7];
+  node [shape=box, style="rounded,filled", fillcolor="#eef5fb", color="#244a6a", fontname="Arial"];
+  edge [color="#4d6f8a", fontname="Arial"];
+  client [label="session3_dashboard.py / client"];
+  contract [label="cma.proto + contracts.py\ntyped contract / drift check"];
+  stub [label="transport.py\nmake_stub()"];
+  json [label="HTTP / JSON"];
+  phttp [label="HTTP / protobuf"];
+  grpc [label="real grpcio / protobuf"];
+  services [label="services.py\nCustomerService\nConfigService\nEntitlementService\nTransactionService\nRevenueService\nChargeService"];
+  data [label="PostgreSQL: indian_ecommerce\npublic.customers (40,000)\npublic.products (2,000)\npublic.sales (250,000)"];
+  s1 [label="Session 1 Spark output\nsession1_parallel_compute/results/baseline_result.csv"];
+  s2 [label="Session 2 stream output\nsession2_event_streaming/results/streamed_customer_revenue.csv"];
+  s3 [label="Session 3 service output\nresults/session3_customer_revenue.csv"];
+  rec [label="reconcile.py\n3-way correctness gate"];
+  bench [label="benchmark.py\npayload · latency · N+1 · streaming"];
+  client -> contract; client -> stub; contract -> stub;
+  stub -> json; stub -> phttp; stub -> grpc;
+  json -> services; phttp -> services; grpc -> services;
+  services -> data;
+  services -> s3;
+  stub -> bench;
+  s1 -> rec; s2 -> rec; s3 -> rec;
+}

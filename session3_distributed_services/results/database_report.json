@@ -1,0 +1,20 @@
+{
+  "source": "PostgreSQL",
+  "host": "localhost",
+  "port": 5432,
+  "database": "indian_ecommerce",
+  "schema": "public",
+  "user": "postgres",
+  "tables": {
+    "customers": 40000,
+    "products": 2000,
+    "sales": 250000
+  },
+  "result": "PASS",
+  "expected_rows": {
+    "customers": 40000,
+    "products": 2000,
+    "sales": 250000
+  },
+  "counts_match_expected": true
+}

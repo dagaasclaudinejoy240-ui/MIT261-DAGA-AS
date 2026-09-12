@@ -1,0 +1,16 @@
+{
+  "rest_result": {
+    "charge_id": "CHG-386EE5CBD715",
+    "status": "approved",
+    "amount_cents": 150000,
+    "provider": "EcomInsightPayments"
+  },
+  "grpc_result": {
+    "charge_id": "CHG-386EE5CBD715",
+    "status": "approved",
+    "amount_cents": 150000,
+    "provider": "EcomInsightPayments"
+  },
+  "identical": true,
+  "caller_changes": 0
+}
